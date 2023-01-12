@@ -1,0 +1,1 @@
+# GreenDigitalizationCourse2023
