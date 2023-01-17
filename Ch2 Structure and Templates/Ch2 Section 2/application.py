@@ -10,9 +10,9 @@ def home():
 def methodology():
   return render_template('methodology.html', title='methodology')
 
-@application.route('/app_calculator')
-def app_calculator():
-    return render_template('app_calculator.html', title='app_calculator')
+@application.route('/carbon_app')
+def carbon_app():
+    return render_template('carbon_app.html', title='carbon_app')
 
 if __name__=='__main__':
   application.run(debug=True)  
