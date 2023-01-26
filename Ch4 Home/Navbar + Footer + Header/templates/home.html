@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section class="section_header_home">
+  <div class="container">
+
+    <div class="header_home">
+      <div class="box"> 
+        <h1 style="font-size:55px;"><span class="text-logo"> Home</span></h1>
+        <p style="text-align:left;">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat dolores quos asperiores repellendus facilis cum illo aperiam odit doloremque nostrum. Totam excepturi labore voluptatibus iusto sapiente quisquam consectetur optio magnam voluptates omnis vel officia alias distinctio quas laborum reiciendis ratione inventore veniam, cupiditate doloribus dolore, eius natus a. Magni inventore consequuntur voluptas reprehenderit perferendis! Molestias aspernatur rem autem aut temporibus.
+        </p>
+        <div class="container_buttons_header_home">
+          <div class="btn">
+              <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Register</a>
+          </div>
+          <div class="btn">
+              <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Login</a>
+          </div>
+        </div>  
+      </div>
+      <div class="box">
+        <img 
+          src="{{url_for('static', filename='icons/carbon_app.svg')}}"
+          width="325" 
+          height="325"
+          alt=""/>
+      </div>
+    </div>
+
+  </div>
+</section> 
+
+
+        
+{% endblock content %}
