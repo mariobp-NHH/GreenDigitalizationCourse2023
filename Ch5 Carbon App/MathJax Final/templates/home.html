@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- MathJax -->
+<section style="background-color:#8bbbd9;">
+  ...
+</section> 
+
+<section class="section1">
+  <div class="container">
+    <h1>MathJax</h1>    
+  </div>
+
+  <div class="container"> 
+    <div class="box">
+        <h5>Mathematical expressions 1</h5>
+        <p class="text-left">
+        Mathematical expressions \( x = {-b \pm \sqrt{b^2-4ac} \over 2a} \) inside text.
+        <br>
+        Mathematical expressions outside text:
+        \[ x = {-b \pm \sqrt{b^2-4ac} \over 2a} \]
+        </p> 
+    </div> 
+    <div class="box">
+      <h5>Mathematical expressions 2</h5>
+      <p class="text-left">
+          Mathematical expressions \( x^2 + y^2 = z^2 \) inside text.
+          <br>
+          Mathematical expressions outside text:
+          \[ x^2 + y^2 = z^2 \]                 
+      </p> 
+  </div>              
+  </div>
+
+  <div class="container"> 
+    <div class="box">
+      <h5>Sums</h5>
+      <p class="text-left">
+          Sum \(\sum_{n=1}^{\infty} 2^{-n} = 1\) inside text.
+          <br>
+          Sum outside text:
+          \[ \sum_{n=1}^{\infty} 2^{-n} = 1 \]
+      
+      </p>
+    </div> 
+    <div class="box">
+      <h5>Limits</h5>
+      <p class="text-left">
+          Limit \(\lim_{x\to\infty} f(x)\) inside text.
+          <br>
+          Limit outside text:
+          \[ \lim_{x\to\infty} f(x) \]
+      </p> 
+  </div>              
+  </div>
+
+</section> 
+
+<section style="background-color:#8bbbd9;">
+  ...
+</section> 
+
+        
+{% endblock content %}

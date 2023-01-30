@@ -1,0 +1,11 @@
+
+/* CSS utilities */
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  margin: auto;
+  max-width: 1320px;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+      <!-- CSS code -->
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='layout.css') }}">
+
+      <!-- Matjax -->
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+      {% if title %}
+          <title>{{ title }}</title>
+      {% else %}
+          <title>home</title>
+      {% endif %}
+        
+    </head>
+    <body>
+        
+        {% block content %} {% endblock %}
+
+    </body>
+</html>

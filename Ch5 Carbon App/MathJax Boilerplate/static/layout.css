@@ -1,0 +1,42 @@
+
+/* CSS utilities */
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+h1 {
+  font-size: 30px;
+}
+h5 {
+  font-size: 20px;
+}
+.container {
+  margin: auto;
+  max-width: 1320px;
+}
+.section1{
+  background:  #fff;
+}
+.section1 .container {
+  max-width: 1320px;
+  display: flex;
+  background:  #fff;
+  flex-direction: row;
+}
+.section1 .container .box {
+  flex: 1;
+  background: #8bbbd9;;
+  color: black;
+  border-radius: 5px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:left;
+  font-size: 18px;
+}  
+.section1 .container .box:nth-of-type(1) {
+  flex-grow: 1;
+}  
+.section1 .container .box:nth-of-type(2) {
+  flex-grow: 1;
+} 

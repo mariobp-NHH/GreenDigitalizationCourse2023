@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+      <!-- CSS code -->
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='layout.css') }}">
+      
+      {% if title %}
+          <title>{{ title }}</title>
+      {% else %}
+          <title>home</title>
+      {% endif %}
+        
+    </head>
+    <body>
+        
+        {% block content %} {% endblock %}
+
+    </body>
+</html>

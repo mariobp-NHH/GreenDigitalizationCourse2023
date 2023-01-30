@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Buttons -->
+<section style="background-color:#8bbbd9;">
+  ...
+</section> 
+
+<section>
+  <div class="container">
+    <h1>Buttons</h1>
+
+    <h5>Default Bootstrap buttons - Browser -</h5>
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <br>
+    <br>
+    <h5>Outline buttons - Browser -</h5>
+    <button type="button" class="btn btn-outline-danger">Danger</button>
+    <button type="button" class="btn btn-outline-warning">Warning</button>
+    <br>
+    <br>
+    <h5>Size buttons - Browser -</h5>
+    <button type="button" class="btn btn-primary btn-lg">Large button</button>
+    <button type="button" class="btn btn-secondary btn-sm">Small button</button> 
+    <br>
+    <br>
+  </div>
+</section> 
+
+<section style="background-color:#8bbbd9;">
+  ...
+</section> 
+
+<!-- Icons -->
+<section>
+  <div class="container">
+    <h1>Icons</h1>
+    <div class="h1 mb-3">
+        <i class="bi bi-arrow-up-circle-fill"></i>
+        <i class="bi bi-arrow-up-square-fill"></i>
+        <i class="bi bi-calculator"></i>
+        <i class="bi bi-bar-chart-fill"></i>
+    </div> 
+  </div>
+</section>
+
+<section style="background-color:#8bbbd9;">
+  ...
+</section> 
+
+<!-- Modal -->
+<section>
+  <div class="container">
+    <h1>Modal</h1>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Launch demo modal
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              </div>
+              <div class="modal-body">
+              ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+          </div>
+        </div>
+    </div>
+    <br>
+    <br>
+  </div>
+</section>
+
+<section style="background-color:#8bbbd9;">
+  ...
+</section> 
+        
+{% endblock content %}
