@@ -1,0 +1,17 @@
+.div1 {
+  width: 300px;
+  height: 100px;
+  border: 1px solid blue;
+  margin:10Px;
+}
+.div2 {
+  width:300px;
+  height: 100px;
+  padding: 20px;
+  border: 1px solid red;
+  box-sizing: border-box;
+  margin:10px;
+}
+.box {
+  display:flex;
+}
