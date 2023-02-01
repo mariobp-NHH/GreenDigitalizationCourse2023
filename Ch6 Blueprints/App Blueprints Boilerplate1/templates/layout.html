@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      
+        {% if title %}
+            <title>{{ title }}</title>
+        {% else %}
+            <title>home</title>
+        {% endif %}
+        
+    </head>
+    <body>
+        Layout
+
+        {% block content %} {% endblock %}
+        
+        
+    </body>
+</html>
