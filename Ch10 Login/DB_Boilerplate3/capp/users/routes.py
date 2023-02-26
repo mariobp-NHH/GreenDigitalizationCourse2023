@@ -25,7 +25,7 @@ def login():
     user = User.query.filter_by(email=form.email.data).first()
     if user and bcrypt.check_password_hash(user.password, form.password.data):
         login_user(user, remember=form.remember.data)
-        flash('You have logged in! Now, you can start to use Forward!', 'success')
+        flash('You have logged in! Now, you can start to use Carbon App!', 'success')
     else:
         flash('Login Unsuccessful. Please check email and password!', 'danger') 
   return render_template('users/login.html', title='login', form=form)
