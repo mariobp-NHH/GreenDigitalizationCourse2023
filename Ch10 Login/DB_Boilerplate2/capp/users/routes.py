@@ -22,8 +22,8 @@ def login():
   form = LoginForm()
   if form.validate_on_submit():
     if form.email.data == 'fjell@demo.com' and form.email.data == 'regn':
-        flash('You have logged in! Now, you can start to use Forward!', 'success')
-        return redirect(url_for('forward_home.home'))
+        flash('You have logged in! Now, you can start to use Carbon App!', 'success')
+        return redirect(url_for('home.home_home'))
     else:
         flash('Login Unsuccessful. Please check email and password!', 'danger')  
   return render_template('users/login.html', title='login', form=form)
