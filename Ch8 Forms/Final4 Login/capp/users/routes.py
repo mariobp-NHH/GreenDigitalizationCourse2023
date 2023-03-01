@@ -15,7 +15,7 @@ def register():
 def login():
   form = LoginForm()
   if form.validate_on_submit():
-    if form.email.data == 'fjell@demo.com' and form.email.data == 'regn':
+    if form.email.data == 'fjell@demo.com' and form.password.data == 'regn':
         flash('You have logged in! Now, you can start to use Forward!', 'success')
         return redirect(url_for('home.home_home'))
     else:
