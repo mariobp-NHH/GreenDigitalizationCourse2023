@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <!-- New Entry Section -->
+    <section class="main_menu">
+      <div class="container">
+          <div class="box">
+
+          </div>
+          <div class="box"> 
+              <div class="container_buttons_links_main_menu">
+                  <div class="btn">
+                      <a href="{{ url_for('carbon_app.carbon_app_home') }}" class="btn_carbon_app_new_entry_main">New Entry</a>
+                  </div>   
+              </div>        
+          </div>
+          <div class="box">
+
+          </div>
+      </div>
+    </section> 
+
+    <!-- Table Section -->
+    <section class="table_main">
+    <div class="container">
+        <div class="box">
+
+        </div>
+        <div class="box">  
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div> 
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}         
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">User</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Kilometres</th>
+                        <th scope="col">Transport</th>
+                        <th scope="col">Fuel</th>
+                        <th scope="col">Co2</th>
+                        <th scope="col">Ch4</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in entries %}
+                        <tr>
+                            <th scope="row">{{ current_user.username }}</th>
+                            <td>{{ entry.date.strftime("%m-%d-%Y") }}</td>
+                            <td>{{ entry.kms }}</td>
+                            <td>{{ entry.transport }}</td>
+                            <td>{{ entry.fuel }}</td>
+                            <td>{{ entry.co2 }}</td>
+                            <td>{{ entry.ch4 }}</td>
+                            <td>{{ entry.total }}</td>
+                            <td><a href="{{ url_for('carbon_app.delete_emission', entry_id = entry.id) }}" class="btn btn-outline-danger btn-sm">Delete</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>       
+        </div>
+        <div class="box">
+
+        </div>
+    </div>
+    </section> 
+
+        
+{% endblock content %}
