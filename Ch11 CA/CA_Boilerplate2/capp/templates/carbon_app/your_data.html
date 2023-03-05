@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <!-- New Entry Section -->
+    <section class="main_menu">
+      <div class="container">
+          <div class="box">
+
+          </div>
+          <div class="box"> 
+              <div class="container_buttons_links_main_menu">
+                  <div class="btn">
+                      <a href="{{ url_for('carbon_app.carbon_app_home') }}" class="btn_carbon_app_new_entry_main">New Entry</a>
+                  </div>   
+              </div>        
+          </div>
+          <div class="box">
+
+          </div>
+      </div>
+    </section> 
+
+    <!-- Table Section -->
+    <section class="table_main">
+    <div class="container">
+        <div class="box">
+
+        </div>
+        <div class="box">  
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div> 
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}         
+            Your data...    
+        </div>
+        <div class="box">
+
+        </div>
+    </div>
+    </section> 
+
+        
+{% endblock content %}
