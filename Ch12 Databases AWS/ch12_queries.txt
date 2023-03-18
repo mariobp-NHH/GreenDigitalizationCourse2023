@@ -1,0 +1,89 @@
+Below, there are some useful queries to extract information from our database:
+
+Select command:
+SELECT * FROM public.user_table;
+SELECT username, email FROM public.user_table;
+SELECT password FROM public.user_table;
+SELECT kms, tansport FROM public.transport_table;
+
+
+ORDER BY command:
+SELECT * FROM public.user_table ORDER BY username;
+SELECT * FROM public.user_table ORDER BY username ASC;
+SELECT * FROM public.user_table ORDER BY username DESC;
+SELECT * FROM public.transport_table ORDER BY kms DESC;
+SELECT * FROM public.transport_table ORDER BY fuel ASC;
+
+
+WHERE, AND clauses:
+SELECT * FROM public.transport_table WHERE fuel= 'Diesel';
+SELECT * FROM public.transport_table WHERE fuel= 'Diesel' AND transport= 'Car';
+SELECT * FROM public.transport_table WHERE fuel= 'Diesel' AND (transport= 'Car' or transport= 'Motorbike');
+SELECT * FROM public.transport_table WHERE fuel= 'Diesel' AND (transport= 'Car' or transport= 'Motorbike') ORDER BY transport DESC;
+
+LIMIT, and OFFSET:
+SELECT * FROM public.user_table LIMIT 10;
+SELECT * FROM public.transport_table OFFSET 5 LIMIT 5;
+
+IN:
+SELECT * FROM public.transport_table WHERE transport IN ('Car', 'Ferry');
+SELECT * FROM public.transport_table WHERE transport IN ('Car', 'Ferry') ORDER BY fuel;
+
+Calculating MIN, MAX and AVG:
+SELECT MAX(kms) FROM public.transport_table;
+SELECT MIN(kms) FROM public.transport_table;
+SELECT AVG(kms) FROM public.transport_table;
+SELECT ROUND(AVG(kms)) FROM public.transport_table;
+SELECT transport, MIN(co2) FROM public.transport_table GROUP BY transport;
+SELECT fuel, ROUND(AVG(co2)) FROM public.transport_table GROUP BY fuel;
+
+SUM:
+SELECT SUM(kms) FROM public.transport_table;
+SELECT transport, SUM(co2) FROM public.transport_table GROUP BY transport;
+
+Timestamps and Dates:
+SELECT NOW();
+SELECT NOW()::DATE;
+SELECT NOW()::TIME;
+
+Adding and Subtracting with Dates:
+SELECT NOW() - INTERVAL '1 YEAR';
+SELECT NOW()::DATE - INTERVAL '1 YEAR';
+SELECT NOW()::DATE - INTERVAL '5 DAYS';
+SELECT (NOW() + INTERVAL '5 DAYS')::DATE;
+
+Extracting Fields:
+SELECT EXTRACT(YEAR FROM NOW());
+SELECT EXTRACT(MONTH FROM NOW());
+SELECT EXTRACT(DAY FROM NOW());
+SELECT EXTRACT(DOW FROM NOW());
+SELECT EXTRACT(CENTURY FROM NOW());
+
+DELETE records:
+DELETE FROM  public.user_table WHERE id=1;
+DELETE FROM  public.transport_table WHERE id=1;
+
+UPDATE records:
+UPDATE public.user_table  SET email='hello@demo.com' WHERE id=1;
+SELECT * FROM public.user_table  WHERE id=1;
+UPDATE public.user_table  SET email='hello1@demo.com', username='name1' WHERE id=1;
+SELECT * FROM public.user_table  WHERE id=1;
+
+ON CONFLICT, DO NOTHING:
+INSERT INTO public.user_table  (id, username, email, password)
+VALUES (1, 'name2', 'email2@demo.com', 'regn')
+ON CONFLICT (id) DO NOTHING;
+SELECT * FROM public.user_table;
+
+UPSERT:
+SELECT * FROM public.user_table  WHERE id=1;
+INSERT INTO public.user_table  (id, username, email, password) VALUES (1, 'name2', 'email4@demo.com', 'regn')
+ON CONFLICT (id) DO UPDATE SET email=EXCLUDED.email;
+
+INNER JOINS:
+SELECT * FROM public.user_table
+JOIN public.transport_table ON public.transport_table.user_id = public.user_table.id;
+
+LEFT JOINS:
+SELECT * FROM public.user_table
+LEFT JOIN public.transport_table ON public.transport_table.user_id = public.user_table.id;
