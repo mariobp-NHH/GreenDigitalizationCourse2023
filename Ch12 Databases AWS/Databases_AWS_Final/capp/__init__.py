@@ -6,19 +6,18 @@ import os
 
 application = Flask(__name__)
 
-#application.config['SECRET_KEY'] = os.environ['SECRET_KEY']  
-application.config['SECRET_KEY'] = '3oueqkfdfas8ruewqndr8ewrewrouewrere44554'
-
-# DBVAR = f"postgresql://{os.environ['RDS_USERNAME']}:{os.environ['RDS_PASSWORD']}@{os.environ['RDS_HOSTNAME']}/{os.environ['RDS_DB_NAME']}"
-
-DBVAR = 'postgresql://postgres:7714LLUVIa!@awseb-e-vxbr3q5uam-stack-awsebrdsdatabase-0j5wtkuapg8q.cfn432aqykfx.eu-north-1.rds.amazonaws.com:5432/ebdb'
+### Code GitHub
+application.config['SECRET_KEY'] = os.environ['SECRET_KEY']  
+DBVAR = f"postgresql://{os.environ['RDS_USERNAME']}:{os.environ['RDS_PASSWORD']}@{os.environ['RDS_HOSTNAME']}/{os.environ['RDS_DB_NAME']}"
+DBVAR = 'postgresql://username:password@endpoint:5432//ebdb'
 application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR 
 application.config['SQLALCHEMY_BINDS'] ={'transport': DBVAR}
 
+### Code computer
+# application.config['SECRET_KEY'] = '3oueqkfdfas8ruewqndr8ewrewrouewrere44554'
 # DBVAR = 'sqlite:///user.db'
 # application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR
 # application.config['SQLALCHEMY_BINDS'] ={'transport': 'sqlite:///transport.db'}
-
 
 db = SQLAlchemy(application)
 bcrypt = Bcrypt(application)
@@ -35,4 +34,3 @@ application.register_blueprint(home)
 application.register_blueprint(methodology)
 application.register_blueprint(carbon_app)
 application.register_blueprint(users)
-
