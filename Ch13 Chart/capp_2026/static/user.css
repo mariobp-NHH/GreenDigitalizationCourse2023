@@ -1,0 +1,57 @@
+/*Container register header*/
+/*color=dark*/
+.register_section_css {
+  display: flex;
+  background: #9fa7bf;
+  }
+  
+  .register_section_css .container {
+  display: flex;
+  background: #9fa7bf;
+  }
+  
+  .register_section_css .container {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+  }
+      /*color=dark*/
+  .register_section_css .container .box {
+    flex: 1;
+    background: #fff;
+    color: #fff;
+    border-radius: 2px;
+    margin: 20px 10px;
+    padding: 15px 20px;
+    text-align:center;
+  }
+  
+  .register_section_css .container  .box:nth-of-type(1) {
+    flex-grow:1;
+    background: #9fa7bf;
+    color: #fff;
+    border-radius: 10px;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    text-align:left;
+  }
+  
+  .register_section_css .container  .box:nth-of-type(2) {
+    flex-grow:3;
+  background: #49736f;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  }
+  
+  .register_section_css .container  .box:nth-of-type(3) {
+    flex-grow:1;
+  background: #9fa7bf;
+  color: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+  }
